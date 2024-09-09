@@ -1,0 +1,27 @@
+version: '3.8'
+
+# define os containers utilizados
+services:
+  we_movies:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: we_movies_image:latest
+    container_name: we_movies
+    networks:
+      - compose_network
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    environment:
+      PORT_BUILD: 3000
+
+# define as redes para comunicação entre os containers
+networks:
+  compose_network:
+    driver: bridge
+
+
+# para rodar o docker-compose.yml, execute o comando:
+# docker compose up
