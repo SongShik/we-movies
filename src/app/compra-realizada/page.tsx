@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useEffect } from "react";
 import Cookie from "js-cookie";
 
-export default function compraRealizada() {
+export default function CompraRealizada() {
 
   // Remove o cookie CartValidate ao sair da página
   useEffect(() => {

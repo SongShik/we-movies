@@ -9,7 +9,7 @@ import { useRouter } from 'next/navigation';
 import Cookie from "js-cookie";
 
 export default function Carrinho() {
-  const moviesData = movieStore((state: any) => state.movies);
+  const moviesData = movieStore((state) => state.movies);
   const router = useRouter()
 
   function finishCart() {
