@@ -21,7 +21,7 @@ export default function Carrinho() {
   }
 
   return (
-    <div className="container mx-auto px-4 h-full">
+    <div className="container max-w-[1080px] mx-auto px-4 h-full">
       <div className="bg-white rounded-[0.25rem] w-full p-4 md:p-6">
         <div className="hidden md:grid grid-cols-12 gap-4 mb-6">
           <div className="md:col-span-4 lg:col-span-3"><h6 className="text-primary-gray text-h6"><b>PRODUTO</b></h6></div>

@@ -16,7 +16,7 @@ export default function CompraRealizada() {
   }, []);
 
   return (
-    <div className="container mx-auto px-4 h-full">
+    <div className="container max-w-[1080px] mx-auto px-4 h-full">
       <div className="bg-white rounded-[0.25rem] w-full text-center flex items-center justify-center px-4 py-16 md:py-4 md:min-h-[80vh]">
         <div>
           <h4 className="text-h4 px-4 text-primary-purple"><b>Compra realizada com sucesso!</b></h4>

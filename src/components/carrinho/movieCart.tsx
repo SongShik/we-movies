@@ -80,8 +80,23 @@ export default function MovieCart({ movie }: { movie: IMovie }) {
           </div>
           <div className="flex items-center justify-between w-full mt-3">
             <div className="flex items-center flex-wrap">
-              <Image src={less} alt="Diminuir" className="cursor-pointer" onClick={() => modifyQuantity(movie.id, -1)} />
-              {/* <input value={movie.quantity} type="number" className="w-16 text-center border border-gray-300 active:border-gray-50 rounded-[0.25rem] text-h6 mx-3" /> */}
+              {movie.quantity != 1 ?
+                <Image src={less} alt="Diminuir" className="cursor-pointer"
+                  onClick={() => modifyQuantity(movie.id, -1)}
+                />
+                :
+                <Image src={less} alt="Remover" className="cursor-pointer"
+                  onClick={() => removeMovie(movie.id)}
+                />
+              }
+              <input
+                type="number"
+                min={0}
+                value={movie.quantity}
+                onChange={handleQuantityChange}
+                onBlur={handleBlur}
+                className="w-16 text-center border border-gray-300 active:border-gray-50 rounded-[0.25rem] text-h6 mx-3"
+              />
               <Image src={more} alt="Aumentar" className="cursor-pointer" onClick={() => modifyQuantity(movie.id, 1)} />
             </div>
             <div className="flex items-center flex-col text-center justify-between">

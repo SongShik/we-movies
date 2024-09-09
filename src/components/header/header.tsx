@@ -7,7 +7,7 @@ import QuantityCart from "./quantityCart";
 export default function Header() {
   return (
     <div className="w-full h-20 bg-primary-purple text-white">
-      <div className="container mx-auto px-4 flex items-center justify-between h-full">
+      <div className="container max-w-[1080px] mx-auto px-4 flex items-center justify-between h-full">
         <Link href="/">
           <h4 className="text-h4"><b>WeMovies</b></h4>
         </Link>
