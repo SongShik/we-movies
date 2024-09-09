@@ -5,10 +5,8 @@ import { Suspense } from "react";
 export default async function Home() {
 
   return (
-    <>
-      <Suspense fallback={<Loader />}>
-        <ListMovies />
-      </Suspense>
-    </>
+    <Suspense fallback={<Loader />}>
+      <ListMovies />
+    </Suspense>
   );
 }
