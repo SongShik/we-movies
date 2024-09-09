@@ -1,21 +1,27 @@
 # Utiliza uma imagem base oficial do Node.js
 FROM node:20
 
-# Define o diretório de do container
+# Define o diretório de trabalho do container
 WORKDIR /app
 
-# cria uma variável de ambiente para a porta
+# Copia os arquivos package.json e package-lock.json antes de copiar o código
+COPY package*.json ./
+
+# Instala as dependências do projeto
+RUN npm install
+
+# Copia o restante dos arquivos do projeto para dentro do contêiner
+COPY . .
+
+# Roda o build da aplicação Next.js
+RUN npm run build
+
+# Define variáveis de ambiente
 ARG PORT_BUILD=3000
 ENV PORT=$PORT_BUILD
 
-# Define a porta que a aplicação vai rodar
-EXPOSE $PORT_BUILD
+# Expõe a porta do container
+EXPOSE $PORT
 
-# Copia os arquivos do projeto para dentro do contêiner
-COPY . .
-
-# instala as dependendicas, roda o build e inica a aplicação
-RUN npm install
-RUN npm run build
-
-ENTRYPOINT npm run start
+# Inicia o servidor Next.js em modo produção
+CMD ["npm", "run", "start"]
