@@ -9,12 +9,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'primary-purple': "#2F2E41",
-        'primary-purple-dark': "#1e1d2d",
-        'primary-blue': "#009EDD",
-        'primary-blue-dark': "#0073A1",
-        'primary-green': "#039B00",
-        'primary-green-dark': "#027a00",
+        // Personalização de cores
+        'primary-purple': "#2A2A2A",        // Cinza quase preto
+        'primary-purple-dark': "#1C1C1C",   // Cinza muito escuro
+        'primary-blue': "#FFA500",          // Laranja
+        'primary-blue-dark': "#FF8C00",     // Laranja escuro
+        'primary-green': "#4CAF50",         // Verde médio vibrante
+        'primary-green-dark': "#388E3C",    // Verde escuro vibrante
         'primary-gray': "#999999",
         'primary-gray-dark': "#666666",
         'custom-black': "#333333",
